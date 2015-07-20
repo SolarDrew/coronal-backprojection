@@ -53,5 +53,5 @@ for j in np.linspace(0, model.shape[1]-1, 5):
              vmin=np.nanmin(slice), vmax=np.nanmax(slice))
              #vmin=0, vmax=1)
   plt.colorbar()
-  plt.savefig('slicemap_{}'.format(int(j))))
+  plt.savefig('slicemap_{}'.format(int(j)))
   plt.close()
