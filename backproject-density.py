@@ -14,8 +14,9 @@ tmap = TMap('2011-02-15', maps_dir=expanduser('~/coronal-backprojection/'),
 EMmap = Map(10**tmap.emission_measure, tmap.meta.copy())
 
 # Define ranges of reconstruction space
-xrange = EMmap.xrange / EMmap.rsun_arcseconds
-yrange = EMmap.yrange / EMmap.rsun_arcseconds
+rsun = EMmap.rsun_arcseconds
+xrange = (EMmap.xrange[0] / rsun, EMmap.xrange[1] / rsun)
+yrange = (EMmap.yrange[0] / rsun, EMmap.yrange[1] / rsun)
 zrange = [min([xrange[0], yrange[0]]), max([xrange[1], yrange[1]])]
 print xrange, yrange, zrange
 
