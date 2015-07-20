@@ -9,7 +9,7 @@ from temperature import TemperatureMap as TMap
 from astropy import units as u
 
 # Load a temperature map and get the EM data out of it
-tmap = TMap('2011-02-15', maps_dir='/home/drew/coronal-backprojection/',
+tmap = TMap('2011-02-15', maps_dir=expanduser('~/coronal-backprojection/'),
             n_params=3)
 EMmap = Map(10**tmap.emission_measure, tmap.meta.copy())
 
@@ -53,5 +53,5 @@ for j in np.linspace(0, model.shape[1]-1, 5):
              vmin=np.nanmin(slice), vmax=np.nanmax(slice))
              #vmin=0, vmax=1)
   plt.colorbar()
-  plt.savefig('slicemap_{}'.format(int(j)))
+  plt.savefig('slicemap_{}'.format(int(j))))
   plt.close()
